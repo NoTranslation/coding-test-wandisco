@@ -1,18 +1,22 @@
 package org.flfranci;
 
-import static org.junit.Assert.assertEquals;
 
 
-import org.junit.Test;
+
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import static org.flfranci.Util.getRoundedValue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CubeTest {
 
     @Test
+    @DisplayName("Cube Volume is correct to 2 decimals")
     public void getVolumeShouldBeCorrectTo2Decimals(){
         Cube cube1 = new Cube(1);
 
