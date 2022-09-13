@@ -17,6 +17,7 @@ public class Menu {
             String formatedOptions = formatOptions(options);
             System.out.println(formatedOptions);
             optionPicked = userInput.nextLine();
+            //Trys the parse the option entered by user, defaults to error value
             int optionAsNum = tryParseInt(optionPicked,-1);
             if (optionAsNum > 0 && optionAsNum < options.size()) {
                 return optionAsNum;
@@ -26,6 +27,7 @@ public class Menu {
     }
 
     private static String formatOptions(List<String> options) {
+        // Uses stream to loop through each of the options and format them like "1. Example"
         return IntStream.range(1, options.size())
                 .mapToObj(x -> String.format("%d. %s", x, options.get(x)))
                 .collect(Collectors.joining("\n"));

@@ -13,8 +13,9 @@ public class Util {
     }
 
     public static double getRoundedValue(double value, int decimals){
+        //Scales the double value to requested decimal places
         return new BigDecimal(value)
-                .setScale(2, RoundingMode.HALF_EVEN)
+                .setScale(decimals, RoundingMode.HALF_EVEN)
                 .doubleValue();
     }
 }
